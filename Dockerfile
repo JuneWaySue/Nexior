@@ -1,8 +1,8 @@
 # build stage
-FROM node:18 as build-stage
+FROM node:18.12.0 as build-stage
 WORKDIR /app
 COPY package.json yarn.lock ./
-RUN yarn config set ignore-engines true
+RUN yarn
 COPY . .
 RUN yarn build
 
