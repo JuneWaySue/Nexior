@@ -2,7 +2,7 @@
 FROM node:18 as build-stage
 WORKDIR /app
 COPY package.json yarn.lock ./
-RUN yarn
+RUN yarn config set ignore-engines true
 COPY . .
 RUN yarn build
 
